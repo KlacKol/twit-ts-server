@@ -8,6 +8,7 @@ import {DatabaseModule} from "./modules/database.module";
 import {AuthController, PostController} from "./controllers";
 import {AuthService, PostService} from "./services";
 import {Posts, Users} from "./entities";
+import {JwtStrategy} from "./middlewares/jwt.strategy";
 
 const entities = [
   Posts, Users
@@ -27,6 +28,6 @@ const entities = [
       })
   ],
   controllers: [PostController, AuthController],
-  providers: [PostService, AuthService],
+  providers: [PostService, AuthService, JwtStrategy],
 })
 export class AppModule {}

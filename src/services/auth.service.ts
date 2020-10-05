@@ -31,7 +31,7 @@ export class AuthService {
         name: userData.name,
         type: 'access'
       }
-      const accessToken = this.jwtService.sign(payload, {expiresIn: process.env.EXPIRES_IN})
+      const accessToken = this.jwtService.sign(payload)
 
       return {
         accessToken,
